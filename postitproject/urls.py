@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+import postit.views  # views의 위치를 철저히 알려줘야 한다.
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', postit.views.home),
+    url(r'^login', postit.views.login_page),
 ]

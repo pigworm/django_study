@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Postit</title>
+</head>
+<body>
+<h1>Postit</h1>
+<form method="post">
+    {% csrf_token %}
+    <textarea name="message"></textarea>
+    <button type="submit">입력</button>
+</form>
+{% for postit in postit_list %}
+<p>{{ postit.message }}({{ postit.user }}) -- {{ postit.created_at }}</p>
+{% endfor %}
+
+
+</body>
+</html>
